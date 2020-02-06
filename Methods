@@ -1,1 +1,23 @@
-sdsdsd
+    
+    
+    זה הרשימה שאנו רוצים לשים בה נתונים מהפיירבייס
+    imageDetailList: AngularFireList<any>;
+    
+    אנו צריכים את המחלקה הזאת בשביל לגשת לפיירבייס
+    constructor(private firebase: AngularFireDatabase) { }
+    
+    יוצר רשימה בפיירבייס
+    this.imageDetailList = this.firebase.list('imageDetails');
+    
+    
+    imageDetailListעכשיו צריך להירשם ל
+    
+     
+    כשאנו לא רוצים לשנות את ערכי הרשימה valueChanges()עדיף להשתמש ב
+    שהוא משמש מצב בו נרצה לשנות את ערכי הרשימה snapshotChanges()כאן יש 
+    this.imageDetailList.snapshotChanges().subscribe(
+      list => {
+        this.imageList = list.map(item => { return item.payload.val(); });
+        this.rowIndexArray =  Array.from(Array(Math.ceil((this.imageList.length+1) / 3)).keys());
+      }
+    );
