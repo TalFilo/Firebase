@@ -21,3 +21,19 @@
         this.rowIndexArray =  Array.from(Array(Math.ceil((this.imageList.length+1) / 3)).keys());
       }
     );
+    
+    ככה נכניס ערך לרשימה
+    this.imageDetailList.push(משהו);
+    
+    ככה נכניס אובייקט
+    this.imageDetailList.push({
+    message: msg,
+    timeSent: timestamp,
+    userName: this.userName,
+    email: email });
+    
+    
+    וככה נעדכן משהו מסויים ברשימה
+    מה שקורה כאן הוא שאנו מחליפים באובייקט הספציפי רק את המשתנה המצוין
+    this.imageDetailList.update(נתיב , { message: msg });
+    
